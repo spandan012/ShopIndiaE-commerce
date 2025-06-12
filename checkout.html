@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ShopIndia</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shopping-bag"></i> ShopIndia
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Checkout</h1>
+            <p class="lead">Complete your order securely</p>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <div class="container py-5">
+        <div class="row">
+            <!-- Checkout Steps -->
+            <div class="col-lg-8">
+                <!-- Shipping Address -->
+                <div class="checkout-step">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Shipping Address</h3>
+                    </div>
+                    <form id="shipping-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label">State</label>
+                                <select class="form-select" required>
+                                    <option value="">Choose...</option>
+                                    <option>Maharashtra</option>
+                                    <option>Delhi</option>
+                                    <option>Karnataka</option>
+                                    <!-- Add more states -->
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label">PIN Code</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="checkout-step">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Payment Method</h3>
+                    </div>
+                    <div class="payment-methods">
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="payment" id="upi" checked>
+                            <label class="form-check-label" for="upi">
+                                UPI <i class="fas fa-mobile-alt text-primary"></i>
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="payment" id="card">
+                            <label class="form-check-label" for="card">
+                                Credit/Debit Card <i class="fab fa-cc-visa text-primary"></i> <i class="fab fa-cc-mastercard text-primary"></i>
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="payment" id="cod">
+                            <label class="form-check-label" for="cod">
+                                Cash on Delivery <i class="fas fa-money-bill-wave text-primary"></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="col-lg-4">
+                <div class="cart-summary">
+                    <h4>Order Summary</h4>
+                    <div id="checkout-items">
+                        <!-- Order items will be loaded here by JS -->
+                    </div>
+                    <hr>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span id="shipping">₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (GST 18%):</span>
+                        <span id="tax">₹0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">₹0</span>
+                    </div>
+                    <button class="btn btn-primary btn-lg w-100 mt-3" onclick="placeOrder()">
+                        Place Order
+                    </button>
+                    <p class="text-muted small mt-3">
+                        By placing your order, you agree to ShopIndia's 
+                        <a href="#">Terms of Service</a> and 
+                        <a href="#">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-shopping-bag"></i> ShopIndia</h5>
+                    <p>Your trusted online shopping destination in India. Quality products, great prices, and excellent service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Customer Service</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h6>Contact Info</h6>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-envelope"></i> info@shopindia.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 ShopIndia. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>We accept: <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i> <i class="fas fa-mobile-alt"></i></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Load checkout items on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCheckoutSummary();
+        });
+
+        function updateCheckoutSummary() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const checkoutItems = document.getElementById('checkout-items');
+            let subtotal = 0;
+
+            // Update items
+            let itemsHTML = '';
+            cart.forEach(item => {
+                subtotal += item.price * item.quantity;
+                itemsHTML += `
+                    <div class="summary-row">
+                        <span>${item.name} × ${item.quantity}</span>
+                        <span>₹${(item.price * item.quantity).toLocaleString('en-IN')}</span>
+                    </div>
+                `;
+            });
+            checkoutItems.innerHTML = itemsHTML;
+
+            // Calculate totals
+            const shipping = subtotal > 99900 ? 0 : 9900;
+            const tax = Math.round(subtotal * 0.18);
+            const total = subtotal + shipping + tax;
+
+            // Update summary
+            document.getElementById('subtotal').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+            document.getElementById('shipping').textContent = shipping === 0 ? 'Free' : `₹${shipping.toLocaleString('en-IN')}`;
+            document.getElementById('tax').textContent = `₹${tax.toLocaleString('en-IN')}`;
+            document.getElementById('total').textContent = `₹${total.toLocaleString('en-IN')}`;
+        }
+
+        function placeOrder() {
+            // Add order placement logic here
+            showToast('Order placed successfully!', 'success');
+            localStorage.removeItem('cart');
+            setTimeout(() => {
+                window.location.href = 'order-confirmation.html';
+            }, 1500);
+        }
+    </script>
+</body>
+</html>

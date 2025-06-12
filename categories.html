@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - ShopIndia</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-shopping-bag"></i> ShopIndia
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="categories.html">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="search.html">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Shop by Category</h1>
+            <p class="lead">Find what you're looking for in our curated collections</p>
+        </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Electronics Category -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="category-card">
+                        <a href="products.html?category=electronics" class="text-decoration-none">
+                            <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Electronics" class="category-image">
+                            <div class="category-content">
+                                <h4>Electronics</h4>
+                                <p>Latest gadgets and devices</p>
+                                <span class="items-count">15 items</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Fashion Category -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="category-card">
+                        <a href="products.html?category=fashion" class="text-decoration-none">
+                            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Fashion" class="category-image">
+                            <div class="category-content">
+                                <h4>Fashion</h4>
+                                <p>Trending clothes and accessories</p>
+                                <span class="items-count">25 items</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Home & Living Category -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="category-card">
+                        <a href="products.html?category=home" class="text-decoration-none">
+                            <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Home & Living" class="category-image">
+                            <div class="category-content">
+                                <h4>Home & Living</h4>
+                                <p>Furniture and home decor</p>
+                                <span class="items-count">20 items</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-shopping-bag"></i> ShopIndia</h5>
+                    <p>Your trusted online shopping destination in India. Quality products, great prices, and excellent service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Customer Service</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h6>Contact Info</h6>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-envelope"></i> info@shopindia.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 ShopIndia. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>We accept: <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i> <i class="fas fa-mobile-alt"></i></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

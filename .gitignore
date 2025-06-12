@@ -1,0 +1,22 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+
+# Dependencies
+node_modules/
+vendor/
+
+# Compiled Files
+*.min.css
+*.min.js
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
