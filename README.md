@@ -73,7 +73,7 @@ shopindiaecommerce/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/spandan012/shopindiaecommerce.git
+git clone https://github.com/spandan012/ShopIndiaE-commerce.git
 ```
 
 2. Open the project folder:
